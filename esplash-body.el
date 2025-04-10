@@ -36,7 +36,6 @@
 
 ;;; Menus
 (defun esplash-body-1 ()
-  ""
   (list
    (concat (propertize "⏱ Recently opened files             " 'face esplash-body-face)
            (propertize "SPC e f" 'face esplash-body-key-face))
@@ -50,7 +49,6 @@
            (propertize "SPC e q" 'face esplash-body-key-face))))
 
 (defun esplash-body-2 ()
-  ""
   (list
    (concat (propertize "⏱ Recently opened files             " 'face esplash-body-face)
            (propertize "SPC e f\n" 'face esplash-body-key-face))
@@ -64,7 +62,6 @@
            (propertize "SPC e q\n" 'face esplash-body-key-face))))
 
 (defun esplash-body-3 ()
-  ""
   (list
    (concat (propertize "Recently opened files             " 'face esplash-body-face)
            (propertize "SPC e f" 'face esplash-body-key-face))
@@ -78,7 +75,6 @@
            (propertize "SPC e q" 'face esplash-body-key-face))))
 
 (defun esplash-body-4 ()
-  ""
   (list
    (concat (propertize "Recently opened files             " 'face esplash-body-face)
            (propertize "SPC e f\n" 'face esplash-body-key-face))
@@ -93,7 +89,6 @@
 
 
 (defun esplash-body-5 ()
-  ""
   (list
    (concat
     (propertize "⟲ Reload last session               " 'face esplash-body-face)
@@ -118,7 +113,6 @@
     (propertize "SPC e d" 'face esplash-body-key-face))))
 
 (defun esplash-body-6 ()
-  ""
   (list
    (concat
     (propertize "⟲ Reload last session               " 'face esplash-body-face)
@@ -143,7 +137,6 @@
     (propertize "SPC e d\n" 'face esplash-body-key-face))))
 
 (defun esplash-body-7 ()
-  ""
   (list
    (concat
     (propertize "Reload last session               " 'face esplash-body-face)
@@ -168,7 +161,6 @@
     (propertize "SPC e d" 'face esplash-body-key-face))))
 
 (defun esplash-body-8 ()
-  ""
   (list
    (concat
     (propertize "Reload last session               " 'face esplash-body-face)
@@ -193,21 +185,18 @@
     (propertize "SPC e d\n" 'face esplash-body-key-face))))
 
 (defun esplash-body-9 ()
-  ""
   (list
    (propertize "[?] [⌂Homepage] [🗞Documentation] [⛭Private Configuration]" 'face esplash-body-face)
    (propertize "[🗓Open org-agenda] [⏱Recently opened files]" 'face esplash-body-face)
    (propertize "[🖿Open project] [★Jump to bookmark]" 'face esplash-body-face)))
 
 (defun esplash-body-10 ()
-  ""
   (list
    (propertize "[?] [⌂Homepage] [🗞Documentation] [⛭Private Configuration]\n" 'face esplash-body-face)
    (propertize "[🗓Open org-agenda] [⏱Recently opened files]\n" 'face esplash-body-face)
    (propertize "[🖿Open project] [★Jump to bookmark]\n" 'face esplash-body-face)))
 
 (defun esplash-body-11 ()
-  ""
   (list
    (propertize "[?] [Homepage] [Documentation] [Private Configuration]\n" 'face esplash-body-face)
    (propertize "[Open org-agenda] [Recently opened files]\n" 'face esplash-body-face)
@@ -215,7 +204,6 @@
 (provide 'body)
 
 (defun esplash-body-12 ()
-  ""
   (list
    (propertize "[?] [Homepage] [Documentation] [Private Configuration]\n" 'face esplash-body-face)
    (propertize "[Open org-agenda] [Recently opened files]\n" 'face esplash-body-face)
