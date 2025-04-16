@@ -38,163 +38,163 @@
 (defun esplash-body-1 ()
   (list
    (concat (propertize "⏱ Recently opened files             " 'face esplash-body-face)
-           (propertize "SPC e f" 'face esplash-body-key-face))
+           (propertize "r" 'face esplash-body-key-face))
    (concat (propertize "🖿 New file                          " 'face esplash-body-face)
-           (propertize "SPC e n" 'face esplash-body-key-face))
+           (propertize "n" 'face esplash-body-key-face))
    (concat (propertize "⛭ Configuration                     " 'face esplash-body-face)
-           (propertize "SPC e c" 'face esplash-body-key-face))
+           (propertize "c" 'face esplash-body-key-face))
    (concat (propertize "⟲ Open last session                 " 'face esplash-body-face)
-           (propertize "SPC e l" 'face esplash-body-key-face))
+           (propertize "l" 'face esplash-body-key-face))
    (concat (propertize "⏻ Quit                              " 'face esplash-body-face)
-           (propertize "SPC e q" 'face esplash-body-key-face))))
+           (propertize "q" 'face esplash-body-key-face))))
 
 (defun esplash-body-2 ()
   (list
    (concat (propertize "⏱ Recently opened files             " 'face esplash-body-face)
-           (propertize "SPC e f\n" 'face esplash-body-key-face))
+           (propertize "f\n" 'face esplash-body-key-face))
    (concat (propertize "🖿 New file                          " 'face esplash-body-face)
-           (propertize "SPC e n\n" 'face esplash-body-key-face))
+           (propertize "n\n" 'face esplash-body-key-face))
    (concat (propertize "⛭ Configuration                     " 'face esplash-body-face)
-           (propertize "SPC e c\n" 'face esplash-body-key-face))
+           (propertize "c\n" 'face esplash-body-key-face))
    (concat (propertize "⟲ Open last session                 " 'face esplash-body-face)
-           (propertize "SPC e l\n" 'face esplash-body-key-face))
+           (propertize "l\n" 'face esplash-body-key-face))
    (concat (propertize "⏻ Quit                              " 'face esplash-body-face)
-           (propertize "SPC e q\n" 'face esplash-body-key-face))))
+           (propertize "q\n" 'face esplash-body-key-face))))
 
 (defun esplash-body-3 ()
   (list
    (concat (propertize "Recently opened files             " 'face esplash-body-face)
-           (propertize "SPC e f" 'face esplash-body-key-face))
+           (propertize "f" 'face esplash-body-key-face))
    (concat (propertize "New file                          " 'face esplash-body-face)
-           (propertize "SPC e n" 'face esplash-body-key-face))
+           (propertize "n" 'face esplash-body-key-face))
    (concat (propertize "Configuration                     " 'face esplash-body-face)
-           (propertize "SPC e c" 'face esplash-body-key-face))
+           (propertize "c" 'face esplash-body-key-face))
    (concat (propertize "Open last session                 " 'face esplash-body-face)
-           (propertize "SPC e l" 'face esplash-body-key-face))
+           (propertize "l" 'face esplash-body-key-face))
    (concat (propertize "Quit                              " 'face esplash-body-face)
-           (propertize "SPC e q" 'face esplash-body-key-face))))
+           (propertize "q" 'face esplash-body-key-face))))
 
 (defun esplash-body-4 ()
   (list
    (concat (propertize "Recently opened files             " 'face esplash-body-face)
-           (propertize "SPC e f\n" 'face esplash-body-key-face))
+           (propertize "r\n" 'face esplash-body-key-face))
    (concat (propertize "New file                          " 'face esplash-body-face)
-           (propertize "SPC e n\n" 'face esplash-body-key-face))
+           (propertize "n\n" 'face esplash-body-key-face))
    (concat (propertize "Configuration                     " 'face esplash-body-face)
-           (propertize "SPC e c\n" 'face esplash-body-key-face))
+           (propertize "c\n" 'face esplash-body-key-face))
    (concat (propertize "Open last session                 " 'face esplash-body-face)
-           (propertize "SPC e l\n" 'face esplash-body-key-face))
+           (propertize "l\n" 'face esplash-body-key-face))
    (concat (propertize "Quit                              " 'face esplash-body-face)
-           (propertize "SPC e q\n" 'face esplash-body-key-face))))
+           (propertize "q\n" 'face esplash-body-key-face))))
 
 
 (defun esplash-body-5 ()
   (list
    (concat
     (propertize "⟲ Reload last session               " 'face esplash-body-face)
-    (propertize "SPC e l" 'face esplash-body-key-face))
+    (propertize "l" 'face esplash-body-key-face))
    (concat
     (propertize "🗓 Open org-agenda                   " 'face esplash-body-face)
-    (propertize "SPC e a" 'face esplash-body-key-face))
+    (propertize "a" 'face esplash-body-key-face))
    (concat
     (propertize "⏱ Recently opened files             " 'face esplash-body-face)
-    (propertize "SPC e f" 'face esplash-body-key-face))
+    (propertize "r" 'face esplash-body-key-face))
    (concat
     (propertize "🖿 Open project                      " 'face esplash-body-face)
-    (propertize "SPC  e p" 'face esplash-body-key-face))
+    (propertize "p" 'face esplash-body-key-face))
    (concat
     (propertize "★ Jump to bookmark                  " 'face esplash-body-face)
-    (propertize "SPC e b" 'face esplash-body-key-face))
+    (propertize "b" 'face esplash-body-key-face))
    (concat
     (propertize "⛭ Open private configuration        " 'face esplash-body-face)
-    (propertize "SPC e c" 'face esplash-body-key-face))
+    (propertize "c" 'face esplash-body-key-face))
    (concat
     (propertize "🗞 Search Documentation              " 'face esplash-body-face)
-    (propertize "SPC e d" 'face esplash-body-key-face))))
+    (propertize "d" 'face esplash-body-key-face))))
 
 (defun esplash-body-6 ()
   (list
    (concat
     (propertize "⟲ Reload last session               " 'face esplash-body-face)
-    (propertize "SPC e l\n" 'face esplash-body-key-face))
+    (propertize "l\n" 'face esplash-body-key-face))
    (concat
     (propertize "🗓 Open org-agenda                   " 'face esplash-body-face)
-    (propertize "SPC e a\n" 'face esplash-body-key-face))
+    (propertize "a\n" 'face esplash-body-key-face))
    (concat
     (propertize "⏱ Recently opened files             " 'face esplash-body-face)
-    (propertize "SPC e f\n" 'face esplash-body-key-face))
+    (propertize "r\n" 'face esplash-body-key-face))
    (concat
     (propertize "🖿 Open project                      " 'face esplash-body-face)
-    (propertize "SPC e p\n" 'face esplash-body-key-face))
+    (propertize "p\n" 'face esplash-body-key-face))
    (concat
     (propertize "★ Jump to bookmark                    " 'face esplash-body-face)
-    (propertize "SPC e b\n" 'face esplash-body-key-face))
+    (propertize "b\n" 'face esplash-body-key-face))
    (concat
     (propertize "⛭ Open private configuration        " 'face esplash-body-face)
-    (propertize "SPC e c\n" 'face esplash-body-key-face))
+    (propertize "c\n" 'face esplash-body-key-face))
    (concat
     (propertize "🗞 Search Documentation              " 'face esplash-body-face)
-    (propertize "SPC e d\n" 'face esplash-body-key-face))))
+    (propertize "d\n" 'face esplash-body-key-face))))
 
 (defun esplash-body-7 ()
   (list
    (concat
     (propertize "Reload last session               " 'face esplash-body-face)
-    (propertize "SPC e l" 'face esplash-body-key-face))
+    (propertize "l" 'face esplash-body-key-face))
    (concat
     (propertize "Open org-agenda                   " 'face esplash-body-face)
-    (propertize "SPC e a" 'face esplash-body-key-face))
+    (propertize "a" 'face esplash-body-key-face))
    (concat
     (propertize "Recently opened files             " 'face esplash-body-face)
-    (propertize "SPC e f" 'face esplash-body-key-face))
+    (propertize "r" 'face esplash-body-key-face))
    (concat
     (propertize "Open project                      " 'face esplash-body-face)
-    (propertize "SPC e p" 'face esplash-body-key-face))
+    (propertize "p" 'face esplash-body-key-face))
    (concat
     (propertize "Jump to bookmark                    " 'face esplash-body-face)
-    (propertize "SPC e b" 'face esplash-body-key-face))
+    (propertize "b" 'face esplash-body-key-face))
    (concat
     (propertize "Open private configuration        " 'face esplash-body-face)
-    (propertize "SPC e c" 'face esplash-body-key-face))
+    (propertize "c" 'face esplash-body-key-face))
    (concat
     (propertize "Search Documentation              " 'face esplash-body-face)
-    (propertize "SPC e d" 'face esplash-body-key-face))))
+    (propertize "d" 'face esplash-body-key-face))))
 
 (defun esplash-body-8 ()
   (list
    (concat
     (propertize "Reload last session               " 'face esplash-body-face)
-    (propertize "SPC e l\n" 'face esplash-body-key-face))
+    (propertize "l\n" 'face esplash-body-key-face))
    (concat
     (propertize "Open org-agenda                   " 'face esplash-body-face)
-    (propertize "SPC e a\n" 'face esplash-body-key-face))
+    (propertize "a\n" 'face esplash-body-key-face))
    (concat
     (propertize "Recently opened files             " 'face esplash-body-face)
-    (propertize "SPC e f\n" 'face esplash-body-key-face))
+    (propertize "r\n" 'face esplash-body-key-face))
    (concat
     (propertize "Open project                      " 'face esplash-body-face)
-    (propertize "SPC e p\n" 'face esplash-body-key-face))
+    (propertize "p\n" 'face esplash-body-key-face))
    (concat
     (propertize "Jump to bookmark                    " 'face esplash-body-face)
-    (propertize "SPC e b\n" 'face esplash-body-key-face))
+    (propertize "b\n" 'face esplash-body-key-face))
    (concat
     (propertize "Open private configuration        " 'face esplash-body-face)
-    (propertize "SPC e c\n" 'face esplash-body-key-face))
+    (propertize "c\n" 'face esplash-body-key-face))
    (concat
     (propertize "Search Documentation              " 'face esplash-body-face)
-    (propertize "SPC e d\n" 'face esplash-body-key-face))))
+    (propertize "d\n" 'face esplash-body-key-face))))
 
 (defun esplash-body-9 ()
   (list
-   (propertize "[?] [⌂Homepage] [🗞Documentation] [⛭Private Configuration]" 'face esplash-body-face)
-   (propertize "[🗓Open org-agenda] [⏱Recently opened files]" 'face esplash-body-face)
-   (propertize "[🖿Open project] [★Jump to bookmark]" 'face esplash-body-face)))
+   (propertize "[?] [⌂ Homepage] [🗞 Documentation] [⛭ Private Configuration]" 'face esplash-body-face)
+   (propertize "[🗓 Open org-agenda] [⏱ Recently opened files]" 'face esplash-body-face)
+   (propertize "[🖿 Open project] [★ Jump to bookmark]" 'face esplash-body-face)))
 
 (defun esplash-body-10 ()
   (list
-   (propertize "[?] [⌂Homepage] [🗞Documentation] [⛭Private Configuration]\n" 'face esplash-body-face)
-   (propertize "[🗓Open org-agenda] [⏱Recently opened files]\n" 'face esplash-body-face)
-   (propertize "[🖿Open project] [★Jump to bookmark]\n" 'face esplash-body-face)))
+   (propertize "[?] [⌂ Homepage] [🗞 Documentation] [⛭ Private Configuration]\n" 'face esplash-body-face)
+   (propertize "[🗓 Open org-agenda] [⏱ Recently opened files]\n" 'face esplash-body-face)
+   (propertize "[🖿 Open project] [★ Jump to bookmark]\n" 'face esplash-body-face)))
 
 (defun esplash-body-11 ()
   (list
