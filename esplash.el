@@ -154,7 +154,7 @@
       ;; Lock scroll
       (setq-local scroll-conservatively 101
 		  scroll-preserve-screen-position t
-1		  scroll-margin 0
+		  scroll-margin 0
 		  auto-window-vscroll nil)
       ;; Hooks
       (add-hook 'kill-buffer-hook 
