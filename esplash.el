@@ -157,10 +157,17 @@
 1		  scroll-margin 0
 		  auto-window-vscroll nil)
       ;; Hooks
-      (add-hook 'kill-buffer-hook (lambda () (cancel-timer kill-timer)) nil t)
+      (add-hook 'kill-buffer-hook 
+		lambda () (cancel-timer kill-timer)) 
+	    	nil t)
       (add-hook 'post-command-hook #'esplash-lock-scroll nil t)
-      (add-hook 'window-scroll-functions (lambda (_win _start) (esplash-lock-scroll)) nil t))
-    (set-window-dedicated-p (get-buffer-window esplash-buffer) t)))
+      (add-hook 'window-scroll-functions 
+		(lambda (_win _start) 
+		(esplash-lock-scroll)) 
+		nil t))
+    (set-window-dedicated-p 
+     	(get-buffer-window esplash-buffer) 
+     	t)))
 
 (provide 'esplash)
 
