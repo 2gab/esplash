@@ -88,6 +88,17 @@
 (defvar esplash-footer-gap 0.02)
 (defvar esplash-end-gap 0.05)
 
+(defun esplash--count-lines (component)
+  (apply #'+ (mapcar (lambda (item)
+                       (let ((s (cond
+                                 ((and (listp item) (= (safe-length item) 3)
+                                       (stringp (nth 0 item)) (functionp (nth 2 item)))
+                                  (nth 0 item))
+                                 ((listp item) (eval item))
+                                 (t item))))
+                         (1+ (cl-count ?\n (substring-no-properties s)))))
+                     (if (listp component) component (list component)))))
+
 (defun esplash-draw ()
   (let* ((buffer (get-buffer-create "*esplash*"))
          (window (get-buffer-window buffer))
@@ -97,14 +108,19 @@
                        (,esplash-quote . (,esplash-quote-gap . ,esplash-quote-face))
                        (,esplash-body . (,esplash-body-gap . ,esplash-body-face))
                        (,esplash-footer . (,esplash-footer-gap . ,esplash-footer-face))
-                       (,esplash-end . (,esplash-end-gap . ,esplash-end-face)))))
+                       (,esplash-end . (,esplash-end-gap . ,esplash-end-face))))
+         (total-content (apply #'+ (mapcar (lambda (e) (esplash--count-lines (car e))) components)))
+         (total-gaps (apply #'+ (mapcar (lambda (e) (round (* (cadr e) win-height))) components)))
+         (top-padding (max 0 (/ (- win-height (+ total-content total-gaps)) 2))))
     (with-current-buffer buffer
       (setq buffer-read-only nil)
       (erase-buffer)
+      (insert (make-string top-padding ?\n))
       (cl-loop for (content . (spacing . face)) in components do
                (insert (make-string (round (* spacing win-height)) ?\n))
                (dolist (item (if (listp content) content (list content)))
-                 (let* ((is-action (and (listp item) (= (safe-length item) 3) (stringp (nth 0 item))))
+                 (let* ((is-action (and (listp item) (= (safe-length item) 3)
+                                        (stringp (nth 0 item)) (functionp (nth 2 item))))
                         (line-str (cond (is-action (nth 0 item))
                                         ((listp item) (eval item))
                                         (t item)))
@@ -174,6 +190,14 @@
     (with-current-buffer esplash-buffer
       (setq buffer-read-only nil)
       (erase-buffer)
+      ;; Screen setup before draw so window-body-height reflects the final layout
+      (setq-local display-line-numbers nil
+		  truncate-lines t
+		  buffer-undo-list t
+		  vertical-scroll-bar nil
+		  horizontal-scroll-bar nil
+		  mode-line-format nil)
+      (redisplay t)
       (esplash-draw)
       (esplash-goto-first-item)
       ;; Keys
@@ -192,13 +216,6 @@
                            (lambda () (interactive)
                              (kill-buffer (current-buffer))
                              (funcall act))))))
-      ;; Screen
-      (setq-local display-line-numbers nil
-		  truncate-lines t
-		  buffer-undo-list t
-		  vertical-scroll-bar nil
-		  horizontal-scroll-bar nil
-		  mode-line-format nil)
       (read-only-mode 1)
       (hl-line-mode 1)
       ;; Lock scroll
