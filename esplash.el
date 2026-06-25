@@ -33,6 +33,8 @@
 
 ;;; Code:
 
+(setq inhibit-startup-screen t)
+
 ;;; Faces
 (defvar esplash-header-face 
   `(:height 1.2
