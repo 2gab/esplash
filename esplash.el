@@ -88,6 +88,21 @@
 (defvar esplash-footer-gap 0.02)
 (defvar esplash-end-gap 0.05)
 
+(defvar esplash--resize-timer nil)
+
+(defun esplash--on-window-size-change (frame)
+  (when (get-buffer-window "*esplash*" frame)
+    (when (timerp esplash--resize-timer)
+      (cancel-timer esplash--resize-timer))
+    (setq esplash--resize-timer
+          (run-with-idle-timer 0.1 nil
+                               (lambda ()
+                                 (let ((buf (get-buffer "*esplash*")))
+                                   (when (and buf (buffer-live-p buf))
+                                     (with-current-buffer buf
+                                       (esplash-draw)
+                                       (esplash-goto-first-item)))))))))
+
 (defun esplash--count-lines (component)
   (apply #'+ (mapcar (lambda (item)
                        (let ((s (cond
@@ -224,9 +239,14 @@
 		  scroll-margin 0
 		  auto-window-vscroll nil)
       ;; Hooks
-      (add-hook 'kill-buffer-hook 
-		(lambda () (cancel-timer kill-timer)) 
-	    	nil t)
+      (add-hook 'window-size-change-functions #'esplash--on-window-size-change)
+      (add-hook 'kill-buffer-hook
+                (lambda ()
+                  (cancel-timer kill-timer)
+                  (remove-hook 'window-size-change-functions #'esplash--on-window-size-change)
+                  (when (timerp esplash--resize-timer)
+                    (cancel-timer esplash--resize-timer)))
+                nil t)
       (add-hook 'post-command-hook #'esplash-lock-scroll nil t)
       (add-hook 'window-scroll-functions 
 		(lambda (_win _start) 
