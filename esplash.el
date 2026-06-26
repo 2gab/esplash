@@ -70,11 +70,12 @@
 	    :weight bold))
 
 (require 'cl-lib)
-(require 'esplash-header) 
-(require 'esplash-quote)  
-(require 'esplash-body)   
-(require 'esplash-footer) 
-(require 'esplash-end)    
+(require 'esplash-header)
+(require 'esplash-quote)
+(require 'esplash-body)
+(require 'esplash-footer)
+(require 'esplash-end)
+(require 'esplash-effect)
 
 ;;; Components
 (defvar esplash-header (esplash-header-1))
@@ -89,6 +90,11 @@
 (defvar esplash-body-gap 0.02)
 (defvar esplash-footer-gap 0.02)
 (defvar esplash-end-gap 0.05)
+
+(defvar esplash-after-start-hook nil
+  "Hook run after the esplash buffer is fully set up.
+Use this to activate effects or run custom code on startup, e.g.:
+  (add-hook \\='esplash-after-start-hook #\\='esplash-effect-snow)")
 
 (defvar esplash--resize-timer nil)
 
@@ -254,9 +260,11 @@
 		(lambda (_win _start) 
 		(esplash-lock-scroll)) 
 		nil t))
-    (set-window-dedicated-p 
-     	(get-buffer-window esplash-buffer) 
-     	t)))
+    (set-window-dedicated-p
+     (get-buffer-window esplash-buffer)
+     t)
+    (run-hooks 'esplash-after-start-hook)
+    esplash-buffer))
 
 (provide 'esplash)
 
